@@ -23,12 +23,12 @@ const Projects = () => {
           {portfolioData.projects.map((project, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
-                <Card className="flex h-full flex-col">
+                <Card className="flex h-full flex-col transform-gpu transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                   <CardHeader>
                     <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
                     <div className="flex flex-wrap gap-2 pt-2">
                       {project.techStack.map(tech => (
-                        <Badge key={tech} variant="outline">{tech}</Badge>
+                        <Badge key={tech} variant="outline" className="transition-colors hover:bg-accent/20">{tech}</Badge>
                       ))}
                     </div>
                   </CardHeader>
@@ -43,13 +43,13 @@ const Projects = () => {
                   <CardFooter>
                     <div className="flex items-center gap-2">
                         <a href={project.links.live} target="_blank" rel="noopener noreferrer">
-                            <Button variant="outline" size="sm" className="gap-2"><Laptop />Live App</Button>
+                            <Button variant="outline" size="sm" className="gap-2 transition-transform duration-300 hover:scale-105"><Laptop />Live App</Button>
                         </a>
                         <a href={project.links.github} target="_blank" rel="noopener noreferrer">
-                            <Button variant="outline" size="sm" className="gap-2"><Github />GitHub</Button>
+                            <Button variant="outline" size="sm" className="gap-2 transition-transform duration-300 hover:scale-105"><Github />GitHub</Button>
                         </a>
                         <a href={project.links.demo} target="_blank" rel="noopener noreferrer">
-                            <Button variant="outline" size="sm" className="gap-2"><LinkIcon />Demo</Button>
+                            <Button variant="outline" size="sm" className="gap-2 transition-transform duration-300 hover:scale-105"><LinkIcon />Demo</Button>
                         </a>
                     </div>
                   </CardFooter>
@@ -58,8 +58,8 @@ const Projects = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="ml-12" />
-        <CarouselNext className="mr-12" />
+        <CarouselPrevious className="ml-12 transition-transform duration-300 hover:scale-110" />
+        <CarouselNext className="mr-12 transition-transform duration-300 hover:scale-110" />
       </Carousel>
     </Section>
   );

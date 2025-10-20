@@ -42,7 +42,7 @@ async function Recommendations() {
       </div>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {recommendations.map((rec, index) => (
-          <Card key={index} className="flex flex-col">
+          <Card key={index} className="flex flex-col transform-gpu transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
             <CardHeader>
                 <BrainCircuit className="h-8 w-8 text-accent mb-2" />
                 <CardTitle>{rec.title}</CardTitle>
@@ -52,8 +52,8 @@ async function Recommendations() {
             </CardContent>
             <CardFooter>
               <a href={rec.url} target="_blank" rel="noopener noreferrer">
-                <Button variant="link" className="p-0">
-                  Read More <ArrowRight className="ml-2 h-4 w-4" />
+                <Button variant="link" className="p-0 group">
+                  Read More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </a>
             </CardFooter>

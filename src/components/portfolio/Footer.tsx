@@ -13,13 +13,13 @@ const Footer = () => {
       <div className="container mx-auto flex flex-col items-center justify-between gap-6 px-4 py-8 md:flex-row">
         <div className="text-center md:text-left">
           <p className="font-headline text-lg font-semibold">{portfolioData.name}</p>
-          <a href={`mailto:${portfolioData.contact.email}`} className="text-sm text-primary-foreground/80 hover:text-primary-foreground">
+          <a href={`mailto:${portfolioData.contact.email}`} className="text-sm text-primary-foreground/80 transition-colors hover:text-accent">
             {portfolioData.contact.email}
           </a>
         </div>
         <div className="flex items-center gap-4">
           {portfolioData.contact.links.map((link) => (
-            <a href={link.url} key={link.name} target="_blank" rel="noopener noreferrer" aria-label={link.name} className="transition-colors hover:text-accent">
+            <a href={link.url} key={link.name} target="_blank" rel="noopener noreferrer" aria-label={link.name} className="transition-all duration-300 hover:text-accent hover:scale-125">
               {link.name === 'Leetcode' ? <LeetCodeIcon /> : <link.icon />}
             </a>
           ))}

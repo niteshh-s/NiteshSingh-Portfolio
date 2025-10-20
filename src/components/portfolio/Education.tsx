@@ -12,7 +12,7 @@ const Education = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {portfolioData.education.map((edu, index) => (
-          <Card key={index} className="flex flex-col border-2 transition-shadow duration-300 hover:shadow-lg">
+          <Card key={index} className="flex flex-col border-2 transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-[1.02] hover:border-primary">
             <CardHeader className="items-center text-center p-5">
               <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-primary">
                 <GraduationCap className="h-7 w-7" />

@@ -17,7 +17,7 @@ const Skills = () => {
     <AnimatedSection id="skills">
        <div className="mb-12 text-center">
         <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Skills</h2>
-        <p className="mt-2 text-lg text-muted-foreground">My technical expertise.</p>
+        <p className="mt-2 text-base text-muted-foreground">My technical expertise.</p>
       </div>
       <Carousel
         opts={{
@@ -32,10 +32,10 @@ const Skills = () => {
               <div className="p-1">
                 <Card className="h-full">
                   <CardContent className="flex h-full flex-col items-center justify-center p-6">
-                    <h3 className="mb-4 text-xl font-semibold">{category}</h3>
+                    <h3 className="mb-4 text-lg font-semibold">{category}</h3>
                     <div className="flex flex-wrap justify-center gap-2">
                       {skills.map((skill, i) => (
-                        <Badge key={i} variant="secondary">
+                        <Badge key={i} variant="secondary" className="text-sm">
                           {skill}
                         </Badge>
                       ))}
@@ -49,7 +49,7 @@ const Skills = () => {
         <CarouselPrevious className="hidden sm:flex"/>
         <CarouselNext className="hidden sm:flex"/>
       </Carousel>
-      <p className="mt-4 text-center text-sm text-muted-foreground sm:hidden">
+      <p className="mt-4 text-center text-xs text-muted-foreground sm:hidden">
         Swipe to see more skills
       </p>
     </AnimatedSection>

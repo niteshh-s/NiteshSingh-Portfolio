@@ -47,9 +47,9 @@ const Header = () => {
             <div className="group">
               <div className="font-semibold">Contact me</div>
               <div className="text-sm text-muted-foreground">
-                <a href={`mailto:${portfolioData.contact.email}`} className="hover:text-primary">{portfolioData.contact.email}</a>
+                <span>{portfolioData.contact.email}</span>
                 <span className="mx-2">|</span>
-                <a href={`tel:+91${portfolioData.contact.phone}`} className="hover:text-primary">+91 {portfolioData.contact.phone}</a>
+                <span>+91 {portfolioData.contact.phone}</span>
               </div>
             </div>
         </div>

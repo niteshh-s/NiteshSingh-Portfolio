@@ -19,7 +19,7 @@ async function Recommendations() {
   } catch (error) {
     console.error("Failed to get content recommendations:", error);
     return (
-      <Section id="recommendations" className="bg-muted/30">
+      <Section id="recommendations" className="bg-secondary">
         <div className="text-center">
             <h2 className="font-headline text-4xl font-bold md:text-5xl">Content For You</h2>
             <p className="mt-2 text-lg text-destructive">Could not load recommendations at this time.</p>
@@ -35,16 +35,22 @@ async function Recommendations() {
   }
 
   return (
-    <Section id="recommendations" className="bg-muted/30">
-      <div className="mb-12 text-center">
+    <Section id="recommendations" className="bg-secondary">
+      <div className="mb-12 text-center fade-in-up">
         <h2 className="font-headline text-4xl font-bold md:text-5xl">Content For You</h2>
         <p className="mt-2 text-lg text-muted-foreground">AI-powered recommendations based on my profile.</p>
       </div>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {recommendations.map((rec, index) => (
-          <Card key={index} className="flex flex-col transform-gpu transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+          <Card 
+            key={index} 
+            className="flex flex-col transform-gpu transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 fade-in-up"
+            style={{ animationDelay: `${index * 150}ms` }}
+          >
             <CardHeader>
-                <BrainCircuit className="h-8 w-8 text-accent mb-2" />
+                <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <BrainCircuit className="h-6 w-6" />
+                </div>
                 <CardTitle>{rec.title}</CardTitle>
             </CardHeader>
             <CardContent className="flex-grow">

@@ -8,13 +8,15 @@ const Education = () => {
 
   return (
     <Section id="education">
-        <div className="mb-12 text-center">
+        <div className="mb-12 text-center fade-in-up">
             <h2 className="font-headline text-4xl font-bold md:text-5xl">Education</h2>
             <p className="mt-2 text-lg text-muted-foreground">My academic background.</p>
         </div>
-      <Card className="mx-auto max-w-2xl transform-gpu transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+      <Card className="fade-in-up mx-auto max-w-2xl transform-gpu transition-all duration-300 hover:shadow-2xl hover:-translate-y-2" style={{ animationDelay: '200ms'}}>
         <CardHeader className="items-center text-center">
-          <GraduationCap className="h-12 w-12 text-accent transition-transform duration-300 group-hover:scale-110" />
+          <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <GraduationCap className="h-8 w-8 transition-transform duration-300 group-hover:scale-110" />
+          </div>
           <CardTitle className="font-headline text-2xl">{degree}</CardTitle>
           <CardDescription className="text-lg">{university}</CardDescription>
         </CardHeader>

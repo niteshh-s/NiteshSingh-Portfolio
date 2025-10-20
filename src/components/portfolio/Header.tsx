@@ -6,54 +6,56 @@ import { portfolioData } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const Header = () => {
-  const [activeLink, setActiveLink] = useState('');
+  const [activeLink, setActiveLink] = useState('#about');
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
       
-      const sections = portfolioData.navLinks.map(link => document.querySelector(link.href));
-      const scrollPosition = window.scrollY + 150;
+      const sections = [...portfolioData.navLinks, {name: 'Contact', href: '#contact'}].map(link => document.querySelector(link.href));
+      let currentSection = '#about';
 
-      sections.forEach(section => {
-        if (section && section.offsetTop <= scrollPosition && section.offsetTop + section.clientHeight > scrollPosition) {
-          setActiveLink(`#${section.id}`);
+      for (const section of sections) {
+        if (section && section.offsetTop <= window.scrollY + 100) {
+          currentSection = `#${section.id}`;
         }
-      });
+      }
+      setActiveLink(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-    <Link href={href} passHref>
-      <span
-        className={`relative cursor-pointer text-sm font-medium transition-colors hover:text-primary ${
-          activeLink === href ? 'text-primary' : 'text-muted-foreground'
-        }`}
-      >
-        {children}
-        {activeLink === href && (
-          <span className="absolute -bottom-1 left-0 h-0.5 w-full bg-primary"></span>
+  const NavLink = ({ href, children }: { href:string; children: React.ReactNode }) => (
+    <a
+        href={href}
+        className={cn(
+            'relative px-3 py-2 text-sm font-medium transition-colors hover:text-primary',
+            activeLink === href ? 'text-primary' : 'text-foreground'
         )}
-      </span>
-    </Link>
+    >
+        {children}
+    </a>
   );
 
   return (
-    <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'border-b bg-background/80 backdrop-blur-sm' : 'bg-background'}`}>
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+    <header className={cn('sticky top-0 z-50 w-full transition-all duration-300', isScrolled ? 'border-b border-border/50 bg-background/80 backdrop-blur-sm' : 'bg-background')}>
+      <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <Link href="/" passHref>
-          <span className="font-headline text-xl font-bold text-primary cursor-pointer">{portfolioData.initials}</span>
+          <span className="font-headline text-2xl font-bold text-foreground cursor-pointer">NK.</span>
         </Link>
-        <nav className="hidden items-center space-x-6 md:flex">
+        <nav className="hidden items-center space-x-2 md:flex">
           {portfolioData.navLinks.map(link => (
             <NavLink key={link.href} href={link.href}>{link.name}</NavLink>
           ))}
+           <a href="#contact">
+            <NavLink href="#contact">Contact</NavLink>
+           </a>
         </nav>
         <div className="md:hidden">
           <Sheet>
@@ -69,6 +71,9 @@ const Header = () => {
                     <span className="cursor-pointer text-lg">{link.name}</span>
                   </Link>
                 ))}
+                 <a href="#contact">
+                    <Button variant="default" className="w-full">Contact</Button>
+                 </a>
               </nav>
             </SheetContent>
           </Sheet>

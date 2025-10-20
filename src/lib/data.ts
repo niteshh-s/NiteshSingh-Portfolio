@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, Phone, Code, Link as LinkIcon, Briefcase } from
 export const portfolioData = {
   name: "Nitesh Kumar Singh",
   initials: "NKS",
-  profile: "Full stack software developer with 3+ years of experience in designing and implementing scalable, high-performance applications in Agile environments.",
+  profile: "Crafting scalable, high-performance applications with 3+ years of experience in modern web technologies and cloud solutions.",
   contact: {
     phone: "9974188220",
     email: "niteshk6720@gmail.com",

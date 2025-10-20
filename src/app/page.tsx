@@ -11,7 +11,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen w-full flex-col">
+    <div className="flex min-h-screen w-full flex-col bg-background">
       <Header />
       <main className="flex-1">
         <Hero />

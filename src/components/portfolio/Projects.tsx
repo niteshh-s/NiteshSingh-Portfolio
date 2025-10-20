@@ -8,8 +8,8 @@ import Section from "./Section";
 
 const Projects = () => {
   return (
-    <Section id="projects">
-      <div className="mb-12 text-center">
+    <Section id="projects" className="bg-muted/50">
+      <div className="mb-12 text-center fade-in-up">
         <h2 className="font-headline text-4xl font-bold md:text-5xl">My Projects</h2>
         <p className="mt-2 text-lg text-muted-foreground">A selection of my work.</p>
       </div>
@@ -17,18 +17,19 @@ const Projects = () => {
         opts={{
           align: "start",
         }}
-        className="w-full"
+        className="w-full fade-in-up"
+        style={{ animationDelay: '200ms'}}
       >
         <CarouselContent>
           {portfolioData.projects.map((project, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
-                <Card className="flex h-full flex-col transform-gpu transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <Card className="flex h-full flex-col transform-gpu transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
                   <CardHeader>
                     <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
                     <div className="flex flex-wrap gap-2 pt-2">
                       {project.techStack.map(tech => (
-                        <Badge key={tech} variant="outline" className="transition-colors hover:bg-accent/20">{tech}</Badge>
+                        <Badge key={tech} variant="secondary" className="transition-colors hover:bg-primary/20">{tech}</Badge>
                       ))}
                     </div>
                   </CardHeader>
@@ -58,8 +59,8 @@ const Projects = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="ml-12 transition-transform duration-300 hover:scale-110" />
-        <CarouselNext className="mr-12 transition-transform duration-300 hover:scale-110" />
+        <CarouselPrevious className="-left-4 md:-left-12 transition-transform duration-300 hover:scale-110" />
+        <CarouselNext className="-right-4 md:-right-12 transition-transform duration-300 hover:scale-110" />
       </Carousel>
     </Section>
   );

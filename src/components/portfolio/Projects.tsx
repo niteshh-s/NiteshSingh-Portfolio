@@ -23,16 +23,22 @@ const Projects = () => {
                   <li key={i}>{detail}</li>
                 ))}
               </ul>
-              <div className="mt-4 flex gap-6">
-                <Link href={project.links.live} target="_blank" className="inline-flex items-center gap-2 font-medium text-primary transition-colors hover:text-primary/80">
-                  Live Application <ArrowUpRight className="h-4 w-4" />
-                </Link>
-                <Link href={project.links.github} target="_blank" className="inline-flex items-center gap-2 font-medium text-primary transition-colors hover:text-primary/80">
-                  Github <ArrowUpRight className="h-4 w-4" />
-                </Link>
-                <Link href={project.links.demo} target="_blank" className="inline-flex items-center gap-2 font-medium text-primary transition-colors hover:text-primary/80">
-                  Demo <ArrowUpRight className="h-4 w-4" />
-                </Link>
+              <div className="mt-4 flex flex-wrap gap-6">
+                {project.links.live && project.links.live !== "#" && (
+                  <Link href={project.links.live} target="_blank" className="inline-flex items-center gap-2 font-medium text-primary transition-colors hover:text-primary/80">
+                    Live Application <ArrowUpRight className="h-4 w-4" />
+                  </Link>
+                )}
+                {project.links.github && project.links.github !== "#" && (
+                  <Link href={project.links.github} target="_blank" className="inline-flex items-center gap-2 font-medium text-primary transition-colors hover:text-primary/80">
+                    Github <ArrowUpRight className="h-4 w-4" />
+                  </Link>
+                )}
+                {project.links.demo && project.links.demo !== "#" && (
+                  <Link href={project.links.demo} target="_blank" className="inline-flex items-center gap-2 font-medium text-primary transition-colors hover:text-primary/80">
+                    Demo <ArrowUpRight className="h-4 w-4" />
+                  </Link>
+                )}
               </div>
             </div>
              <div className={cn("bg-muted p-8 flex items-center justify-center rounded-lg", index % 2 === 1 && "md:order-1")}>

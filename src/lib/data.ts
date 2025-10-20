@@ -77,6 +77,20 @@ export const portfolioData = {
         demo: "#",
       },
     },
+    {
+      title: "File System Organizer",
+      techStack: ["JavaScript", "Node.js"],
+      description: "A CLI application to organize files and view directory structures.",
+      details: [
+        "Created a CLI-application to organize files in a directory based on file types.",
+        "Added a tree-view feature to display the directory structure directly in the terminal.",
+      ],
+      links: {
+        live: "#",
+        github: "https://github.com",
+        demo: "#",
+      },
+    },
   ],
   education: {
     degree: "Bachelors of Engineering – Computer Science & Engineering",

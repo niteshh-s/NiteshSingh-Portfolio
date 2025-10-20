@@ -44,14 +44,14 @@ const Header = () => {
               <div className="font-semibold">About Me</div>
               <div className="text-sm text-muted-foreground">Learn about my self what I do</div>
             </Link>
-            <div className="group">
+            <Link href="#contact" className="group">
               <div className="font-semibold">Contact me</div>
               <div className="text-sm text-muted-foreground">
                 <span>{portfolioData.contact.email}</span>
                 <span className="mx-2">|</span>
                 <span>+91 {portfolioData.contact.phone}</span>
               </div>
-            </div>
+            </Link>
         </div>
         <div className="md:hidden">
           <Sheet>

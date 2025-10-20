@@ -8,27 +8,27 @@ const Education = () => {
 
   return (
     <AnimatedSection id="education">
-        <div className="mb-12 text-center">
-            <h2 className="font-headline text-4xl font-bold md:text-5xl">Education</h2>
-            <p className="mt-2 text-lg text-muted-foreground">My academic background.</p>
-        </div>
-      <Card className="mx-auto max-w-2xl transform-gpu transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:-translate-y-2">
+      <div className="mb-12 text-center">
+        <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Education</h2>
+        <p className="mt-2 text-lg text-muted-foreground">My academic background.</p>
+      </div>
+      <Card className="mx-auto max-w-2xl border-2 transition-shadow duration-300 hover:shadow-lg">
         <CardHeader className="items-center text-center">
-          <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
-            <GraduationCap className="h-8 w-8 transition-transform duration-300 group-hover:scale-110" />
+          <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary text-primary">
+            <GraduationCap className="h-8 w-8" />
           </div>
-          <CardTitle className="font-headline text-2xl">{degree}</CardTitle>
+          <CardTitle className="text-2xl font-semibold">{degree}</CardTitle>
           <CardDescription className="text-lg">{university}</CardDescription>
         </CardHeader>
         <CardContent className="flex justify-around text-center">
-            <div className="flex flex-col items-center gap-1">
-                <span className="text-sm font-semibold text-muted-foreground">Graduation</span>
-                <span className="font-medium">{graduation}</span>
-            </div>
-            <div className="flex flex-col items-center gap-1">
-                <span className="text-sm font-semibold text-muted-foreground">CGPA</span>
-                <span className="font-medium">{cgpa}</span>
-            </div>
+          <div className="flex flex-col items-center gap-1">
+            <span className="text-sm font-semibold text-muted-foreground">Graduation</span>
+            <span className="font-medium">{graduation}</span>
+          </div>
+          <div className="flex flex-col items-center gap-1">
+            <span className="text-sm font-semibold text-muted-foreground">CGPA</span>
+            <span className="font-medium">{cgpa}</span>
+          </div>
         </CardContent>
       </Card>
     </AnimatedSection>

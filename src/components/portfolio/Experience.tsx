@@ -1,44 +1,25 @@
 import { portfolioData } from "@/lib/data";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import AnimatedSection from "./AnimatedSection";
-import { CheckCircle2 } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 const Experience = () => {
   return (
     <AnimatedSection id="experience">
       <div className="mb-16 text-center">
-        <h2 className="font-headline text-4xl font-bold md:text-5xl">Professional Journey</h2>
-        <p className="mt-2 text-lg text-muted-foreground">My career path and accomplishments.</p>
+        <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Experience</h2>
+        <p className="mt-2 text-lg text-muted-foreground">My professional journey and what I've accomplished.</p>
       </div>
-      <div className="relative flex flex-col gap-12">
-        {/* Timeline line */}
-        <div className="absolute left-6 top-0 hidden h-full w-0.5 bg-border md:block" />
+      <div className="space-y-4">
         {portfolioData.experience.map((job, index) => (
-          <div key={index} className="relative pl-12 md:pl-0">
-            <div className="absolute left-0 top-1 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground md:left-0 md:-translate-x-1/2">
-              <job.icon className="h-6 w-6"/>
+          <div key={index} className="rounded-lg border-2 border-transparent bg-background transition-all duration-300 hover:border-primary hover:shadow-xl">
+            <div className="flex flex-col items-start gap-4 p-6 md:flex-row md:items-center md:justify-between">
+              <div>
+                <h3 className="text-xl font-bold">{job.role}</h3>
+                <p className="font-medium text-muted-foreground">{job.company}</p>
+              </div>
+              <p className="font-mono text-sm uppercase text-muted-foreground">{job.period}</p>
             </div>
-            <div className="md:ml-12">
-              <Card className="transform-gpu transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-1">
-                <CardHeader>
-                  <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
-                    <CardTitle className="font-headline text-2xl">{job.role}</CardTitle>
-                    <div className="text-sm text-muted-foreground">{job.period}</div>
-                  </div>
-                  <CardDescription className="text-lg font-semibold text-primary">{job.company}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {job.details.map((detail, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <CheckCircle2 className="mt-1 h-4 w-4 flex-shrink-0 text-primary" />
-                        <span>{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
+            {index < portfolioData.experience.length - 1 && <Separator />}
           </div>
         ))}
       </div>

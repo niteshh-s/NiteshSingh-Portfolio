@@ -2,51 +2,73 @@ import Image from "next/image";
 import { portfolioData } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Button } from "@/components/ui/button";
-import AnimatedSection from "./AnimatedSection";
-import { Mail, ArrowDown, Code } from "lucide-react";
-import { LeetCodeIcon } from "./Icons";
+import { Check, Download, Send } from "lucide-react";
 
 const Hero = () => {
   const profileImage = PlaceHolderImages.find(p => p.id === 'profile-picture');
 
   return (
-    <AnimatedSection id="about" className="pt-24 md:pt-32 lg:pt-40">
-      <div className="container mx-auto text-center">
-        <div className="fade-in-up mb-4" style={{ animationDelay: '0.2s' }}>
-          <span className="text-sm font-bold uppercase tracking-widest text-primary">Full Stack Developer</span>
-        </div>
-        <h1 className="fade-in-up font-headline text-5xl font-black tracking-tighter sm:text-7xl md:text-8xl lg:text-9xl" style={{ animationDelay: '0.4s' }}>
-          Nitesh Kumar <span className="text-primary">Singh</span>
-        </h1>
-        <p className="fade-in-up mx-auto mt-6 max-w-[700px] text-lg text-muted-foreground md:text-xl" style={{ animationDelay: '0.6s' }}>
-          {portfolioData.profile}
-        </p>
-        <div className="fade-in-up mt-8 flex flex-wrap items-center justify-center gap-4" style={{ animationDelay: '0.8s' }}>
+    <section id="about" className="py-24 sm:py-32">
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+        <div className="flex flex-col justify-center">
+          <div className="flex items-center gap-2">
+             <span className="text-4xl">👋</span>
+             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">Hello! I'm Nitesh</h1>
+          </div>
+          <h2 className="mt-2 text-2xl font-semibold text-muted-foreground">Full Stack Developer</h2>
+          <p className="mt-6 max-w-xl text-lg text-muted-foreground">
+            {portfolioData.profile}
+          </p>
+          <ul className="mt-6 space-y-3">
+              <li className="flex items-center gap-3">
+                <Check className="h-5 w-5 text-primary"/>
+                <span>Product must be authentic</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Check className="h-5 w-5 text-primary"/>
+                <span>Solve pain points elegantly</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Check className="h-5 w-5 text-primary"/>
+                <span>User testing, feedback, and validation</span>
+              </li>
+          </ul>
+          <div className="mt-8 flex flex-wrap gap-4">
             <a href={`mailto:${portfolioData.contact.email}`}>
-              <Button size="lg" className="gap-2 transition-transform duration-300 hover:scale-110">
-                  <Mail /> Get In Touch
+              <Button size="lg" className="gap-2">
+                Let's Talk <Send className="h-4 w-4" />
               </Button>
             </a>
-            <a href="#projects">
-              <Button size="lg" variant="outline" className="gap-2 transition-transform duration-300 hover:scale-110">
-                  <Code /> View Work
+            <a href="/resume.pdf" download>
+              <Button size="lg" variant="outline" className="gap-2">
+                Download CV <Download className="h-4 w-4" />
               </Button>
             </a>
+          </div>
         </div>
-         <div className="fade-in-up mt-10 flex items-center justify-center gap-6" style={{ animationDelay: '1s' }}>
-            {portfolioData.contact.links.map((link) => (
-              <a href={link.url} key={link.name} target="_blank" rel="noopener noreferrer" aria-label={link.name} className="text-muted-foreground transition-all duration-300 hover:text-primary hover:scale-125">
-                {link.name === 'Leetcode' ? <LeetCodeIcon /> : <link.icon className="h-6 w-6"/>}
-              </a>
-            ))}
+        <div className="relative flex items-center justify-center">
+            {profileImage && (
+              <div className="relative h-[400px] w-[320px] sm:h-[450px] sm:w-[360px] md:h-[500px] md:w-[400px]">
+                <Image
+                    src={profileImage.imageUrl}
+                    alt={profileImage.description}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-xl"
+                    data-ai-hint={profileImage.imageHint}
+                />
+                <div className="absolute -bottom-8 -left-8 -z-10 h-full w-full rounded-xl border-4 border-dashed border-foreground/30"></div>
+                <div className="absolute -right-8 -top-8 hidden h-24 w-24 items-center justify-center rounded-full bg-background md:flex">
+                    <p className="animate-spin-slow text-sm uppercase">[ Full Stack Developer ]</p>
+                </div>
+                 <div className="absolute -bottom-6 right-0 -z-10 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                    <p className="text-lg font-bold">NS</p>
+                </div>
+              </div>
+            )}
         </div>
       </div>
-       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <a href="#skills" aria-label="Scroll down">
-            <ArrowDown className="h-6 w-6 text-muted-foreground" />
-          </a>
-       </div>
-    </AnimatedSection>
+    </section>
   );
 };
 

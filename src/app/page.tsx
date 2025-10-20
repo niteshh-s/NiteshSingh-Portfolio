@@ -5,36 +5,19 @@ import Skills from '@/components/portfolio/Skills';
 import Experience from '@/components/portfolio/Experience';
 import Projects from '@/components/portfolio/Projects';
 import Education from '@/components/portfolio/Education';
-import Recommendations from '@/components/portfolio/Recommendations';
 import Footer from '@/components/portfolio/Footer';
-import { Skeleton } from '@/components/ui/skeleton';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen w-full flex-col bg-primary text-primary-foreground">
-      <div className='bg-background text-foreground'>
+    <div className="relative mx-auto max-w-[1600px] bg-background text-foreground">
+      <div className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[800px] -translate-x-1/2 bg-[radial-gradient(40%_40%_at_50%_0%,_rgba(200,100,255,0.1)_0%,_rgba(255,255,255,0)_100%)]"></div>
+      <div className="container mx-auto px-4 md:px-8">
         <Header />
-        <main className="flex-1">
+        <main>
           <Hero />
           <Skills />
           <Experience />
           <Projects />
-          <Suspense
-            fallback={
-              <div className="container mx-auto px-4 py-16 md:py-24">
-                <h2 className="mb-12 text-center font-headline text-4xl font-bold md:text-5xl">
-                  Content For You
-                </h2>
-                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                  <Skeleton className="h-48 w-full" />
-                  <Skeleton className="h-48 w-full" />
-                  <Skeleton className="h-48 w-full" />
-                </div>
-              </div>
-            }
-          >
-            <Recommendations />
-          </Suspense>
           <Education />
         </main>
         <Footer />

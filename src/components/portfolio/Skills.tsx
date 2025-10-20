@@ -7,18 +7,13 @@ import { cn } from "@/lib/utils";
 const Skills = () => {
   const skillCategories = Object.entries(portfolioData.skills);
 
-  // md:grid-cols-2 results in a 2-column grid on medium screens and up.
-  // The first item spans 2 columns, creating a 2x1 rectangle at the top.
-  // The next two items are standard 1x1 cards.
-  // The fourth item is a 2x2 card, taking up a larger block.
-  // The last two items fill the remaining space.
   const gridClasses = [
-    "md:col-span-2",
-    "",
-    "",
-    "md:col-span-1 md:row-span-2",
-    "md:col-span-2",
-    "",
+    "md:col-span-2", // Frontend
+    "md:col-span-3 row-span-2", // Backend
+    "md:col-span-1", // DevOps
+    "md:col-span-2", // Database
+    "md:col-span-1", // Cloud
+    "md:col-span-3 row-span-2", // Others
   ];
 
   return (
@@ -37,7 +32,7 @@ const Skills = () => {
             key={index}
             className={cn(
               "flex flex-col justify-center border-2 p-6 transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-105 hover:border-primary",
-              gridClasses[index]
+              gridClasses[index] || ""
             )}
           >
             <CardHeader className="p-0 text-center">
@@ -62,5 +57,3 @@ const Skills = () => {
 };
 
 export default Skills;
-
-    

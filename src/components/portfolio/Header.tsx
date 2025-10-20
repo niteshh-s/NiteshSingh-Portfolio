@@ -44,10 +44,14 @@ const Header = () => {
               <div className="font-semibold">About Me</div>
               <div className="text-sm text-muted-foreground">Learn about my self what I do</div>
             </Link>
-            <a href={`mailto:${portfolioData.contact.email}`} className="group">
+            <div className="group">
               <div className="font-semibold">Contact me</div>
-              <div className="text-sm text-muted-foreground">{portfolioData.contact.email}</div>
-            </a>
+              <div className="text-sm text-muted-foreground">
+                <a href={`mailto:${portfolioData.contact.email}`} className="hover:text-primary">{portfolioData.contact.email}</a>
+                <span className="mx-2">|</span>
+                <a href={`tel:+91${portfolioData.contact.phone}`} className="hover:text-primary">+91 {portfolioData.contact.phone}</a>
+              </div>
+            </div>
         </div>
         <div className="md:hidden">
           <Sheet>

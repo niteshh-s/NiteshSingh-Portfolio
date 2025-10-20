@@ -50,9 +50,9 @@ const Skills = () => {
           A look at my technical expertise.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
         {/* Left Column */}
-        <div className="md:col-span-2 space-y-4">
+        <div className="space-y-4">
           {frontendSkills && <SkillCard category={frontendSkills[0]} skills={frontendSkills[1]} />}
           {backendSkills && <SkillCard category={backendSkills[0]} skills={backendSkills[1]} />}
           {othersSkills && <SkillCard category={othersSkills[0]} skills={othersSkills[1]} />}
@@ -61,7 +61,7 @@ const Skills = () => {
         <div className="space-y-4">
           {devopsSkills && <SkillCard category={devopsSkills[0]} skills={devopsSkills[1]} />}
           {cloudSkills && <SkillCard category={cloudSkills[0]} skills={cloudSkills[1]} />}
-          {databaseSkills && <SkillCard category={databaseSkills[0]} skills={databaseSkills[1]} className="h-full" />}
+          {databaseSkills && <SkillCard category={databaseSkills[0]} skills={databaseSkills[1]} />}
         </div>
       </div>
     </AnimatedSection>

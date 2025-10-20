@@ -19,7 +19,7 @@ const Skills = () => {
   const SkillCard = ({ category, skills, className }: { category: string, skills: string[], className?: string }) => (
     <Card
       className={cn(
-        "flex flex-col border-2 p-4 transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-[1.02] hover:border-primary",
+        "flex flex-col border-2 p-4 transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-[1.02] hover:border-primary h-full",
         className
       )}
     >
@@ -50,19 +50,15 @@ const Skills = () => {
           A look at my technical expertise.
         </p>
       </div>
-      <div className="flex flex-col md:flex-row gap-4 max-w-4xl mx-auto">
-        {/* Left Column */}
-        <div className="flex flex-col w-full md:w-1/2 space-y-4">
-          {frontendSkills && <SkillCard category={frontendSkills[0]} skills={frontendSkills[1]} />}
-          {backendSkills && <SkillCard category={backendSkills[0]} skills={backendSkills[1]} />}
-          {othersSkills && <SkillCard category={othersSkills[0]} skills={othersSkills[1]} />}
-        </div>
-        {/* Right Column */}
-        <div className="flex flex-col w-full md:w-1/2 space-y-4">
-          {devopsSkills && <SkillCard category={devopsSkills[0]} skills={devopsSkills[1]} />}
-          {cloudSkills && <SkillCard category={cloudSkills[0]} skills={cloudSkills[1]} />}
-          {databaseSkills && <SkillCard category={databaseSkills[0]} skills={databaseSkills[1]} />}
-        </div>
+      <div className="grid grid-cols-6 grid-rows-3 gap-4 max-w-4xl mx-auto">
+        {backendSkills && <SkillCard category={backendSkills[0]} skills={backendSkills[1]} className="col-span-4"/>}
+        {devopsSkills && <SkillCard category={devopsSkills[0]} skills={devopsSkills[1]} className="col-span-2"/>}
+
+        {frontendSkills && <SkillCard category={frontendSkills[0]} skills={frontendSkills[1]} className="col-span-3"/>}
+        {databaseSkills && <SkillCard category={databaseSkills[0]} skills={databaseSkills[1]} className="col-span-3"/>}
+
+        {othersSkills && <SkillCard category={othersSkills[0]} skills={othersSkills[1]} className="col-span-5"/>}
+        {cloudSkills && <SkillCard category={cloudSkills[0]} skills={cloudSkills[1]} className="col-span-1"/>}
       </div>
     </AnimatedSection>
   );

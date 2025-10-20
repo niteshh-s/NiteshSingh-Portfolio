@@ -9,7 +9,7 @@ const Projects = () => {
   return (
     <AnimatedSection id="projects">
       <div className="mb-12 text-center">
-        <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Case Study</h2>
+        <h2 className="text-3xl font-bold tracking-tight md:text-4xl">My Projects</h2>
         <p className="mt-2 text-lg text-muted-foreground">A selection of my work and projects.</p>
       </div>
       <div className="space-y-24">
@@ -24,17 +24,17 @@ const Projects = () => {
                 ))}
               </ul>
               <div className="mt-4 flex flex-wrap gap-6">
-                {project.links.live && project.links.live !== "#" && (
+                {project.links.live && (
                   <Link href={project.links.live} target="_blank" className="inline-flex items-center gap-2 font-medium text-primary transition-colors hover:text-primary/80">
                     Live Application <ArrowUpRight className="h-4 w-4" />
                   </Link>
                 )}
-                {project.links.github && project.links.github !== "#" && (
+                {project.links.github && (
                   <Link href={project.links.github} target="_blank" className="inline-flex items-center gap-2 font-medium text-primary transition-colors hover:text-primary/80">
                     Github <ArrowUpRight className="h-4 w-4" />
                   </Link>
                 )}
-                {project.links.demo && project.links.demo !== "#" && (
+                {project.links.demo && (
                   <Link href={project.links.demo} target="_blank" className="inline-flex items-center gap-2 font-medium text-primary transition-colors hover:text-primary/80">
                     Demo <ArrowUpRight className="h-4 w-4" />
                   </Link>

@@ -2,8 +2,8 @@
   "placeholderImages": [
     {
       "id": "profile-picture",
-      "description": "A portrait of a smiling man with curly hair and glasses, wearing a patterned shirt.",
-      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwb3J0cmFpdCUyMG1hbnxlbnwwfHx8fDE3MTc4Mjg2OTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "A portrait of Nitesh Kumar Singh.",
+      "imageUrl": "https://i.ibb.co/7zTf3bN/profile-pic.jpg",
       "imageHint": "man portrait"
     }
   ]

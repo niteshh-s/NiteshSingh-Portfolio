@@ -86,9 +86,7 @@ export const portfolioData = {
         "Added a tree-view feature to display the directory structure directly in the terminal.",
       ],
       links: {
-        live: "#",
         github: "https://github.com",
-        demo: "#",
       },
     },
   ],

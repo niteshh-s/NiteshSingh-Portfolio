@@ -21,24 +21,18 @@ const Education = () => {
               <CardDescription className="text-base">{edu.university}</CardDescription>
             </CardHeader>
             <CardContent className="flex-grow flex flex-col justify-center text-center p-5">
-              {edu.cgpa ? (
-                 <div className="flex justify-around w-full">
-                    <div className="flex flex-col items-center gap-1">
-                        <span className="text-xs font-semibold text-muted-foreground">Graduation</span>
-                        <span className="text-sm font-medium">{edu.graduation}</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-1">
-                        <span className="text-xs font-semibold text-muted-foreground">CGPA</span>
-                        <span className="text-sm font-medium">{edu.cgpa}</span>
-                    </div>
-                 </div>
-              ) : (
-                <div className="text-sm text-muted-foreground space-y-2">
-                    <p>{edu.details?.[0]}</p>
-                    <p>{edu.details?.[1]}</p>
-                    <p>{edu.details?.[2]}</p>
+              <div className="flex justify-around w-full">
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-xs font-semibold text-muted-foreground">Graduation</span>
+                  <span className="text-sm font-medium">{edu.graduation}</span>
                 </div>
-              )}
+                {edu.cgpa && (
+                  <div className="flex flex-col items-center gap-1">
+                    <span className="text-xs font-semibold text-muted-foreground">CGPA</span>
+                    <span className="text-sm font-medium">{edu.cgpa}</span>
+                  </div>
+                )}
+              </div>
             </CardContent>
           </Card>
         ))}

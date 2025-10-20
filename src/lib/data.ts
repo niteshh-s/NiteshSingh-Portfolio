@@ -98,14 +98,9 @@ export const portfolioData = {
       cgpa: "8.38",
     },
     {
-        degree: "Full Stack Web Development",
-        university: "Masai School, Bangalore",
-        graduation: "May 2022",
-        details: [
-            "1200+ hours of hands-on coding",
-            "100+ hours of soft skills training",
-            "300+ DSA problems"
-        ]
+        degree: "12th Grade",
+        university: "Narayana PU College, Bangalore",
+        graduation: "2017",
     }
   ],
   navLinks: [

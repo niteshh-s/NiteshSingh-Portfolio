@@ -11,7 +11,7 @@ const Experience = () => {
       </div>
       <div className="space-y-12">
         {portfolioData.experience.map((job, index) => (
-          <div key={index} className="rounded-lg border-2 border-transparent bg-background transition-all duration-300 hover:border-primary hover:shadow-xl">
+          <div key={index} className="rounded-lg border-2 border-transparent bg-background transition-all duration-300 hover:border-primary hover:shadow-xl hover:scale-105 transform">
             <div className="flex flex-col items-start gap-4 p-6 md:flex-row md:items-center md:justify-between">
               <div>
                 <h3 className="text-xl font-bold">{job.role}</h3>

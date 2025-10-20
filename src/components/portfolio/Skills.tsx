@@ -1,17 +1,20 @@
 import { portfolioData } from "@/lib/data";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import AnimatedSection from "./AnimatedSection";
+import { cn } from "@/lib/utils";
 
 const Skills = () => {
   const skillCategories = Object.entries(portfolioData.skills);
+
+  const gridClasses = [
+    "md:col-span-2",
+    "",
+    "md:row-span-2",
+    "",
+    "md:col-span-2",
+    "",
+  ];
 
   return (
     <AnimatedSection id="skills">
@@ -19,39 +22,30 @@ const Skills = () => {
         <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Skills</h2>
         <p className="mt-2 text-base text-muted-foreground">My technical expertise.</p>
       </div>
-      <Carousel
-        opts={{
-          align: "start",
-          loop: true,
-        }}
-        className="w-full"
-      >
-        <CarouselContent>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-fr">
           {skillCategories.map(([category, skills], index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-              <div className="p-1">
-                <Card className="h-full">
-                  <CardContent className="flex h-full flex-col items-center justify-center p-6">
-                    <h3 className="mb-4 text-lg font-semibold">{category}</h3>
-                    <div className="flex flex-wrap justify-center gap-2">
-                      {skills.map((skill, i) => (
-                        <Badge key={i} variant="secondary" className="text-sm">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </CarouselItem>
+            <Card 
+              key={index} 
+              className={cn(
+                "flex flex-col justify-center border-2 p-6 transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-105 hover:border-primary",
+                gridClasses[index]
+              )}
+            >
+              <CardHeader className="p-0 text-center">
+                <CardTitle className="text-xl font-semibold mb-4">{category}</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow p-0">
+                <div className="flex flex-wrap justify-center gap-2">
+                  {skills.map((skill, i) => (
+                    <Badge key={i} variant="secondary" className="text-sm">
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           ))}
-        </CarouselContent>
-        <CarouselPrevious className="hidden sm:flex"/>
-        <CarouselNext className="hidden sm:flex"/>
-      </Carousel>
-      <p className="mt-4 text-center text-xs text-muted-foreground sm:hidden">
-        Swipe to see more skills
-      </p>
+      </div>
     </AnimatedSection>
   );
 };

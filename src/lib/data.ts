@@ -3,7 +3,7 @@ import { Github, Linkedin, Code, Briefcase } from 'lucide-react';
 export const portfolioData = {
   name: "Nitesh Kumar Singh",
   initials: "NKS",
-  profile: "I'm a UX leader, design thinker, product designer, experience strategist, generative artist & human-loving introvert.",
+  profile: "Full stack software developer with 3+ years of experience in designing and implementing scalable, high performance applications in Agile environments.",
   contact: {
     phone: "9974188220",
     email: "niteshk6720@gmail.com",
@@ -27,15 +27,15 @@ export const portfolioData = {
   },
   skills: {
     'Frontend': ["HTML", "CSS", "JavaScript", "Angular", "TypeScript"],
-    'Backend': [".Net", "C#", "Microservices", "REST APIs", "SignalR", "WebSocket"],
+    'Backend': [".Net", "C#", "Microservices", "REST APIs", "SignalR", "WebSocket", "Concurrency", "Multithreading"],
     'DevOps': ["Azure DevOps", "CI/CD"],
     'Database': ["SQL", "PostgreSQL", "NoSQL", "MongoDB"],
     'Cloud Technologies': ["Azure"],
-    'Others': ["Agile", "OOPS", "SOLID", "Data Structures", "Algorithms", "Design Patterns"],
+    'Others': ["SDLC", "Agile", "OOPS", "SOLID Principles", "Distributed Systems", "Data Structures", "Algorithms", "Design Patterns", "Event-Driven Architecture", "AI Agents"],
   },
   experience: [
     {
-      role: "Software Engineer",
+      role: "Software Engineer 1",
       company: "Precisely | Automate Evolve",
       period: "SEP 2024 - PRESENT",
       details: [
@@ -46,17 +46,17 @@ export const portfolioData = {
       icon: Briefcase,
     },
     {
-      role: "Software Engineer",
+      role: "Software Engineer 1",
       company: "SLB | Maintenance Window Management (MWM)",
       period: "SEP 2022 - SEP 2024",
       details: [
-        "Architected and developed a microservices-based solution to manage patching and maintenance for over 20,000 Windows and Linux servers.",
+        "Architected and developed a microservices-based solution to manage patching and maintenance for over 20,000 Windows and Linux servers, significantly improving downtime coordination and patching efficiency.",
         "Implemented user sign-in functionality using OAuth 2.0 with Microsoft Azure.",
         "Engineered scalable APIs for MWM patch synchronization, achieving 88% patch and 92% reboot success.",
-        "Created an automated alert system using SendGrid to notify users of patching activity outcomes, reducing troubleshooting time by 50%.",
-        "Designed a user-friendly maintenance page with a 'Notify Me' feature, handling 12,000 daily visits and providing real-time updates to 55,000+ users.",
-        "Designed an Angular SPA to monitor application’s cloud modernization journey, increasing productivity by 40%.",
-        "Resolved bugs and vulnerabilities, enhancing overall code quality by 95%.",
+        "Created an automated alert system using SendGrid to notify users of patching activity outcomes, achieving a 50% reduction in troubleshooting time for the operations team.",
+        "Designed and developed a user-friendly maintenance page with a 'Notify Me' feature, providing real-time updates to 55,000+ users and managing 12,000 daily visits.",
+        "Designed an Angular Single Page Application (SPA) to monitor application’s cloud modernization journey, resulting in a 40% increase in productivity for the cloud teams.",
+        "Resolved bugs, code smells, and security vulnerabilities, enhancing overall code quality by 95%",
       ],
       icon: Briefcase,
     },
@@ -67,7 +67,7 @@ export const portfolioData = {
       techStack: ["Angular", ".Net", "WebSocket (SignalR)", "TypeScript", "SQL"],
       description: "A full-stack chat application enabling real-time communication with features like direct messaging, group chats, and typing indicators.",
       details: [
-        "Built a dynamic and responsive frontend using Angular.",
+        "Built a dynamic and responsive frontend for real time chat application using Angular.",
         "Developed the backend using .Net to manage core application functionality.",
         "Enabled real-time messaging, typing indicators, and group chat features through WebSocket communication (SignalR).",
       ],

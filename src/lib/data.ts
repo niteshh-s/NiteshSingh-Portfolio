@@ -101,6 +101,7 @@ export const portfolioData = {
         degree: "12th Grade",
         university: "Narayana PU College, Bangalore",
         graduation: "2017",
+        percentage: "89.3%"
     }
   ],
   navLinks: [

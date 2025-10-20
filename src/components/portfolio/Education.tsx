@@ -32,6 +32,12 @@ const Education = () => {
                     <span className="text-sm font-medium">{edu.cgpa}</span>
                   </div>
                 )}
+                {edu.percentage && (
+                  <div className="flex flex-col items-center gap-1">
+                    <span className="text-xs font-semibold text-muted-foreground">Percentage</span>
+                    <span className="text-sm font-medium">{edu.percentage}</span>
+                  </div>
+                )}
               </div>
             </CardContent>
           </Card>

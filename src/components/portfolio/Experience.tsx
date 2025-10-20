@@ -19,7 +19,7 @@ const Experience = () => {
               <job.icon className="h-6 w-6"/>
             </div>
             <div className="md:ml-12">
-              <Card className="transform-gpu transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <Card className="transform-gpu transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-1">
                 <CardHeader>
                   <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
                     <CardTitle className="font-headline text-2xl">{job.role}</CardTitle>

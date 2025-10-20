@@ -12,7 +12,7 @@ const Education = () => {
             <h2 className="font-headline text-4xl font-bold md:text-5xl">Education</h2>
             <p className="mt-2 text-lg text-muted-foreground">My academic background.</p>
         </div>
-      <Card className="mx-auto max-w-2xl transform-gpu transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+      <Card className="mx-auto max-w-2xl transform-gpu transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:-translate-y-2">
         <CardHeader className="items-center text-center">
           <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
             <GraduationCap className="h-8 w-8 transition-transform duration-300 group-hover:scale-110" />

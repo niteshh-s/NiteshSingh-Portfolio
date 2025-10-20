@@ -12,7 +12,7 @@ type AnimatedSectionProps = {
 
 const AnimatedSection = ({ id, className, children }: AnimatedSectionProps) => {
   const { ref, inView } = useInView({
-    triggerOnce: true,
+    triggerOnce: false, // Trigger animation every time it comes into view
     threshold: 0.1,
   });
 
@@ -21,8 +21,8 @@ const AnimatedSection = ({ id, className, children }: AnimatedSectionProps) => {
       id={id}
       ref={ref}
       className={cn(
-        "w-full py-16 md:py-24 lg:py-28 transition-all duration-700 ease-out",
-        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+        "w-full py-16 md:py-24 lg:py-28 transition-all duration-700 ease-in-out",
+        inView ? 'animate-fade-in-up opacity-100' : 'opacity-0 translate-y-10',
         className
       )}
     >

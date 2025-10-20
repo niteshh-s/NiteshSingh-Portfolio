@@ -23,12 +23,12 @@ const Hero = () => {
         </p>
         <div className="fade-in-up mt-8 flex flex-wrap items-center justify-center gap-4" style={{ animationDelay: '0.8s' }}>
             <a href={`mailto:${portfolioData.contact.email}`}>
-              <Button size="lg" className="gap-2 transition-transform duration-300 hover:scale-105">
+              <Button size="lg" className="gap-2 transition-transform duration-300 hover:scale-110">
                   <Mail /> Get In Touch
               </Button>
             </a>
             <a href="#projects">
-              <Button size="lg" variant="outline" className="gap-2 transition-transform duration-300 hover:scale-105">
+              <Button size="lg" variant="outline" className="gap-2 transition-transform duration-300 hover:scale-110">
                   <Code /> View Work
               </Button>
             </a>

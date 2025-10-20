@@ -14,7 +14,7 @@ const Skills = () => {
         {Object.entries(portfolioData.skills).map(([category, skills], index) => (
           <Card 
             key={category} 
-            className="transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+            className="transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:scale-105"
           >
             <CardHeader>
               <CardTitle className="font-headline text-2xl">{category}</CardTitle>

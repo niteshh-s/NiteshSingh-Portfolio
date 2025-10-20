@@ -1,12 +1,12 @@
 import { portfolioData } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Section from "./Section";
+import AnimatedSection from "./AnimatedSection";
 
 const Skills = () => {
   return (
-    <Section id="skills" className="bg-muted/50">
-      <div className="mb-12 text-center fade-in-up">
+    <AnimatedSection id="skills" className="bg-muted/50">
+      <div className="mb-12 text-center">
         <h2 className="font-headline text-4xl font-bold md:text-5xl">My Skillset</h2>
         <p className="mt-2 text-lg text-muted-foreground">Technologies and tools I work with.</p>
       </div>
@@ -14,8 +14,7 @@ const Skills = () => {
         {Object.entries(portfolioData.skills).map(([category, skills], index) => (
           <Card 
             key={category} 
-            className="fade-in-up transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-            style={{ animationDelay: `${index * 150}ms` }}
+            className="transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
           >
             <CardHeader>
               <CardTitle className="font-headline text-2xl">{category}</CardTitle>
@@ -32,7 +31,7 @@ const Skills = () => {
           </Card>
         ))}
       </div>
-    </Section>
+    </AnimatedSection>
   );
 };
 

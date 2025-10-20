@@ -1,12 +1,12 @@
 import { portfolioData } from "@/lib/data";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import Section from "./Section";
+import AnimatedSection from "./AnimatedSection";
 import { CheckCircle2 } from "lucide-react";
 
 const Experience = () => {
   return (
-    <Section id="experience">
-      <div className="mb-16 text-center fade-in-up">
+    <AnimatedSection id="experience">
+      <div className="mb-16 text-center">
         <h2 className="font-headline text-4xl font-bold md:text-5xl">Professional Journey</h2>
         <p className="mt-2 text-lg text-muted-foreground">My career path and accomplishments.</p>
       </div>
@@ -42,7 +42,7 @@ const Experience = () => {
           </div>
         ))}
       </div>
-    </Section>
+    </AnimatedSection>
   );
 };
 

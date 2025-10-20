@@ -2,7 +2,7 @@ import Image from "next/image";
 import { portfolioData } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Button } from "@/components/ui/button";
-import Section from "./Section";
+import AnimatedSection from "./AnimatedSection";
 import { Mail, ArrowDown, Code } from "lucide-react";
 import { LeetCodeIcon } from "./Icons";
 
@@ -10,7 +10,7 @@ const Hero = () => {
   const profileImage = PlaceHolderImages.find(p => p.id === 'profile-picture');
 
   return (
-    <Section id="about" className="pt-24 md:pt-32 lg:pt-40">
+    <AnimatedSection id="about" className="pt-24 md:pt-32 lg:pt-40">
       <div className="container mx-auto text-center">
         <div className="fade-in-up mb-4" style={{ animationDelay: '0.2s' }}>
           <span className="text-sm font-bold uppercase tracking-widest text-primary">Full Stack Developer</span>
@@ -46,7 +46,7 @@ const Hero = () => {
             <ArrowDown className="h-6 w-6 text-muted-foreground" />
           </a>
        </div>
-    </Section>
+    </AnimatedSection>
   );
 };
 

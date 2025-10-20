@@ -4,12 +4,12 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, Link as LinkIcon, Laptop } from "lucide-react";
-import Section from "./Section";
+import AnimatedSection from "./AnimatedSection";
 
 const Projects = () => {
   return (
-    <Section id="projects" className="bg-muted/50">
-      <div className="mb-12 text-center fade-in-up">
+    <AnimatedSection id="projects" className="bg-muted/50">
+      <div className="mb-12 text-center">
         <h2 className="font-headline text-4xl font-bold md:text-5xl">My Projects</h2>
         <p className="mt-2 text-lg text-muted-foreground">A selection of my work.</p>
       </div>
@@ -17,8 +17,7 @@ const Projects = () => {
         opts={{
           align: "start",
         }}
-        className="w-full fade-in-up"
-        style={{ animationDelay: '200ms'}}
+        className="w-full"
       >
         <CarouselContent>
           {portfolioData.projects.map((project, index) => (
@@ -62,7 +61,7 @@ const Projects = () => {
         <CarouselPrevious className="-left-4 md:-left-12 transition-transform duration-300 hover:scale-110" />
         <CarouselNext className="-right-4 md:-right-12 transition-transform duration-300 hover:scale-110" />
       </Carousel>
-    </Section>
+    </AnimatedSection>
   );
 };
 

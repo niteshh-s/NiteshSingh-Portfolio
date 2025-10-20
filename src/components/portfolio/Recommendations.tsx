@@ -1,6 +1,6 @@
 import { getRelevantContentRecommendations, type RelevantContentRecommendationsInput } from "@/ai/flows/intelligent-content-recommendations";
 import { portfolioData } from "@/lib/data";
-import Section from "./Section";
+import AnimatedSection from "./AnimatedSection";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BrainCircuit } from "lucide-react";
@@ -19,12 +19,12 @@ async function Recommendations() {
   } catch (error) {
     console.error("Failed to get content recommendations:", error);
     return (
-      <Section id="recommendations" className="bg-secondary">
+      <AnimatedSection id="recommendations" className="bg-secondary">
         <div className="text-center">
             <h2 className="font-headline text-4xl font-bold md:text-5xl">Content For You</h2>
             <p className="mt-2 text-lg text-destructive">Could not load recommendations at this time.</p>
         </div>
-      </Section>
+      </AnimatedSection>
     );
   }
 
@@ -35,8 +35,8 @@ async function Recommendations() {
   }
 
   return (
-    <Section id="recommendations" className="bg-secondary">
-      <div className="mb-12 text-center fade-in-up">
+    <AnimatedSection id="recommendations" className="bg-secondary">
+      <div className="mb-12 text-center">
         <h2 className="font-headline text-4xl font-bold md:text-5xl">Content For You</h2>
         <p className="mt-2 text-lg text-muted-foreground">AI-powered recommendations based on my profile.</p>
       </div>
@@ -44,8 +44,7 @@ async function Recommendations() {
         {recommendations.map((rec, index) => (
           <Card 
             key={index} 
-            className="flex flex-col transform-gpu transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 fade-in-up"
-            style={{ animationDelay: `${index * 150}ms` }}
+            className="flex flex-col transform-gpu transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
           >
             <CardHeader>
                 <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -66,7 +65,7 @@ async function Recommendations() {
           </Card>
         ))}
       </div>
-    </Section>
+    </AnimatedSection>
   );
 }
 

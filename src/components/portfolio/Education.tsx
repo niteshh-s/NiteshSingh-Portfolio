@@ -1,18 +1,18 @@
 import { portfolioData } from "@/lib/data";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import Section from "./Section";
+import AnimatedSection from "./AnimatedSection";
 import { GraduationCap } from "lucide-react";
 
 const Education = () => {
   const { degree, university, graduation, cgpa } = portfolioData.education;
 
   return (
-    <Section id="education">
-        <div className="mb-12 text-center fade-in-up">
+    <AnimatedSection id="education">
+        <div className="mb-12 text-center">
             <h2 className="font-headline text-4xl font-bold md:text-5xl">Education</h2>
             <p className="mt-2 text-lg text-muted-foreground">My academic background.</p>
         </div>
-      <Card className="fade-in-up mx-auto max-w-2xl transform-gpu transition-all duration-300 hover:shadow-2xl hover:-translate-y-2" style={{ animationDelay: '200ms'}}>
+      <Card className="mx-auto max-w-2xl transform-gpu transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
         <CardHeader className="items-center text-center">
           <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
             <GraduationCap className="h-8 w-8 transition-transform duration-300 group-hover:scale-110" />
@@ -31,7 +31,7 @@ const Education = () => {
             </div>
         </CardContent>
       </Card>
-    </Section>
+    </AnimatedSection>
   );
 };
 

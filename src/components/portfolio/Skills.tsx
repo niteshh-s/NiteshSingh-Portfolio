@@ -60,8 +60,8 @@ const Skills = () => {
         {/* Right Column */}
         <div className="space-y-4">
           {devopsSkills && <SkillCard category={devopsSkills[0]} skills={devopsSkills[1]} />}
-          {databaseSkills && <SkillCard category={databaseSkills[0]} skills={databaseSkills[1]} />}
           {cloudSkills && <SkillCard category={cloudSkills[0]} skills={cloudSkills[1]} />}
+          {databaseSkills && <SkillCard category={databaseSkills[0]} skills={databaseSkills[1]} className="h-full" />}
         </div>
       </div>
     </AnimatedSection>

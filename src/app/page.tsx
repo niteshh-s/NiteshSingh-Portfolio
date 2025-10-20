@@ -11,32 +11,34 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen w-full flex-col bg-background">
-      <Header />
-      <main className="flex-1">
-        <Hero />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Suspense
-          fallback={
-            <div className="container mx-auto px-4 py-16 md:py-24">
-              <h2 className="mb-12 text-center font-headline text-4xl font-bold md:text-5xl">
-                Content For You
-              </h2>
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <Skeleton className="h-48 w-full" />
-                <Skeleton className="h-48 w-full" />
-                <Skeleton className="h-48 w-full" />
+    <div className="flex min-h-screen w-full flex-col bg-primary text-primary-foreground">
+      <div className='bg-background text-foreground'>
+        <Header />
+        <main className="flex-1">
+          <Hero />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Suspense
+            fallback={
+              <div className="container mx-auto px-4 py-16 md:py-24">
+                <h2 className="mb-12 text-center font-headline text-4xl font-bold md:text-5xl">
+                  Content For You
+                </h2>
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                  <Skeleton className="h-48 w-full" />
+                  <Skeleton className="h-48 w-full" />
+                  <Skeleton className="h-48 w-full" />
+                </div>
               </div>
-            </div>
-          }
-        >
-          <Recommendations />
-        </Suspense>
-        <Education />
-      </main>
-      <Footer />
+            }
+          >
+            <Recommendations />
+          </Suspense>
+          <Education />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

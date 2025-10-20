@@ -44,19 +44,11 @@ const Header = () => {
   );
 
   return (
-    <header className={cn('sticky top-0 z-50 w-full transition-all duration-300', isScrolled ? 'border-b border-border/50 bg-background/80 backdrop-blur-sm' : 'bg-background')}>
+    <header className={cn('sticky top-0 z-50 w-full transition-all duration-300', isScrolled ? ' bg-background/80 backdrop-blur-sm' : 'bg-transparent')}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <Link href="/" passHref>
-          <span className="font-headline text-2xl font-bold text-foreground cursor-pointer">NK.</span>
+          <span className="font-headline text-2xl font-bold text-foreground cursor-pointer">N.S.</span>
         </Link>
-        <nav className="hidden items-center space-x-2 md:flex">
-          {portfolioData.navLinks.map(link => (
-            <NavLink key={link.href} href={link.href}>{link.name}</NavLink>
-          ))}
-           <a href="#contact">
-            <NavLink href="#contact">Contact</NavLink>
-           </a>
-        </nav>
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>

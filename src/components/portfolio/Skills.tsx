@@ -9,14 +9,36 @@ import { cn } from "@/lib/utils";
 const Skills = () => {
   const skillCategories = Object.entries(portfolioData.skills);
 
-  const gridClasses = [
-    "md:col-span-2", // Frontend
-    "md:col-span-3 row-span-2", // Backend
-    "md:col-span-1", // DevOps
-    "md-col-span-2", // Database
-    "md:col-span-1", // Cloud
-    "md:col-span-3 row-span-2", // Others
-  ];
+  const frontendSkills = skillCategories.find(([cat]) => cat === 'Frontend');
+  const backendSkills = skillCategories.find(([cat]) => cat === 'Backend');
+  const othersSkills = skillCategories.find(([cat]) => cat === 'Others');
+  const devopsSkills = skillCategories.find(([cat]) => cat === 'DevOps');
+  const databaseSkills = skillCategories.find(([cat]) => cat === 'Database');
+  const cloudSkills = skillCategories.find(([cat]) => cat === 'Cloud Technologies');
+
+  const SkillCard = ({ category, skills, className }: { category: string, skills: string[], className?: string }) => (
+    <Card
+      className={cn(
+        "flex flex-col border-2 p-4 transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-[1.02] hover:border-primary",
+        className
+      )}
+    >
+      <CardHeader className="p-0 text-center">
+        <CardTitle className="text-lg font-semibold mb-3">
+          {category}
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="flex-grow p-0">
+        <div className="flex flex-wrap justify-center gap-2">
+          {skills.map((skill, i) => (
+            <Badge key={i} variant="secondary" className="text-xs">
+              {skill}
+            </Badge>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  );
 
   return (
     <AnimatedSection id="skills">
@@ -28,140 +50,18 @@ const Skills = () => {
           A look at my technical expertise.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-        {skillCategories.map(([category, skills], index) => {
-            let categoryClass = '';
-            switch(category) {
-                case 'Backend':
-                    categoryClass = 'md:col-span-3 md:row-span-2';
-                    break;
-                case 'Others':
-                    categoryClass = 'md:col-span-3 md:row-span-2';
-                    break;
-                case 'Frontend':
-                    categoryClass = 'md:col-span-2';
-                    break;
-                case 'Database':
-                    categoryClass = 'md:col-span-2';
-                    break;
-                case 'DevOps':
-                    categoryClass = 'md:col-span-2';
-                    break;
-                case 'Cloud Technologies':
-                    categoryClass = 'md:col-span-1';
-                    break;
-                default:
-                    categoryClass = 'md:col-span-1';
-            }
-            if(category === 'Backend'){
-                return (
-                     <Card
-                        key={index}
-                        className={cn(
-                        "flex flex-col border-2 p-4 transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-105 hover:border-primary md:col-span-3 md:row-span-2"
-                        )}
-                    >
-                        <CardHeader className="p-0 text-center">
-                        <CardTitle className="text-lg font-semibold mb-3">
-                            {category}
-                        </CardTitle>
-                        </CardHeader>
-                        <CardContent className="flex-grow p-0">
-                        <div className="flex flex-wrap justify-center gap-2">
-                            {skills.map((skill, i) => (
-                            <Badge key={i} variant="secondary" className="text-xs">
-                                {skill}
-                            </Badge>
-                            ))}
-                        </div>
-                        </CardContent>
-                    </Card>
-                )
-            }
-             if(category === 'Others'){
-                return (
-                     <Card
-                        key={index}
-                        className={cn(
-                        "flex flex-col border-2 p-4 transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-105 hover:border-primary md:col-span-3 md:row-span-2"
-                        )}
-                    >
-                        <CardHeader className="p-0 text-center">
-                        <CardTitle className="text-lg font-semibold mb-3">
-                            {category}
-                        </CardTitle>
-                        </CardHeader>
-                        <CardContent className="flex-grow p-0">
-                        <div className="flex flex-wrap justify-center gap-2">
-                            {skills.map((skill, i) => (
-                            <Badge key={i} variant="secondary" className="text-xs">
-                                {skill}
-                            </Badge>
-                            ))}
-                        </div>
-                        </CardContent>
-                    </Card>
-                )
-            }
-        })}
-        <div className="md:col-span-2 grid grid-cols-1 gap-4">
-             {skillCategories.map(([category, skills], index) => {
-                if(category === 'Frontend'){
-                    return (
-                        <Card
-                            key={index}
-                            className={cn(
-                            "flex flex-col border-2 p-4 transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-105 hover:border-primary"
-                            )}
-                        >
-                            <CardHeader className="p-0 text-center">
-                            <CardTitle className="text-lg font-semibold mb-3">
-                                {category}
-                            </CardTitle>
-                            </CardHeader>
-                            <CardContent className="flex-grow p-0">
-                            <div className="flex flex-wrap justify-center gap-2">
-                                {skills.map((skill, i) => (
-                                <Badge key={i} variant="secondary" className="text-xs">
-                                    {skill}
-                                </Badge>
-                                ))}
-                            </div>
-                            </CardContent>
-                        </Card>
-                    )
-                }
-            })}
-            <div className="grid grid-cols-3 gap-4">
-                {skillCategories.map(([category, skills], index) => {
-                    if(category === 'DevOps' || category === 'Database' || category === "Cloud Technologies"){
-                        return (
-                            <Card
-                                key={index}
-                                className={cn(
-                                "flex flex-col border-2 p-2 transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-105 hover:border-primary",
-                                category === 'Database' ? 'col-span-2' : 'col-span-1'
-                                )}
-                            >
-                                <CardHeader className="p-0 text-center">
-                                <CardTitle className="text-base font-semibold mb-2">
-                                    {category}
-                                </CardTitle>
-                                </CardHeader>
-                                <CardContent className="flex-grow p-0">
-                                <div className="flex flex-wrap justify-center gap-1">
-                                    {skills.map((skill, i) => (
-                                    <Badge key={i} variant="secondary" className="text-xs">
-                                        {skill}
-                                    </Badge>
-                                    ))}
-                                </div>
-                                </CardContent>
-                            </Card>
-                        )
-                    }
-                })}
-            </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+        {/* Left Column */}
+        <div className="md:col-span-2 space-y-4">
+          {frontendSkills && <SkillCard category={frontendSkills[0]} skills={frontendSkills[1]} />}
+          {backendSkills && <SkillCard category={backendSkills[0]} skills={backendSkills[1]} />}
+          {othersSkills && <SkillCard category={othersSkills[0]} skills={othersSkills[1]} />}
+        </div>
+        {/* Right Column */}
+        <div className="space-y-4">
+          {devopsSkills && <SkillCard category={devopsSkills[0]} skills={devopsSkills[1]} />}
+          {databaseSkills && <SkillCard category={databaseSkills[0]} skills={databaseSkills[1]} />}
+          {cloudSkills && <SkillCard category={cloudSkills[0]} skills={cloudSkills[1]} />}
         </div>
       </div>
     </AnimatedSection>

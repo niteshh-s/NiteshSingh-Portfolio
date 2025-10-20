@@ -9,7 +9,7 @@ const Experience = () => {
         <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Experience</h2>
         <p className="mt-2 text-lg text-muted-foreground">My professional journey and what I've accomplished.</p>
       </div>
-      <div className="space-y-4">
+      <div className="space-y-12">
         {portfolioData.experience.map((job, index) => (
           <div key={index} className="rounded-lg border-2 border-transparent bg-background transition-all duration-300 hover:border-primary hover:shadow-xl">
             <div className="flex flex-col items-start gap-4 p-6 md:flex-row md:items-center md:justify-between">
@@ -18,6 +18,13 @@ const Experience = () => {
                 <p className="font-medium text-muted-foreground">{job.company}</p>
               </div>
               <p className="font-mono text-sm uppercase text-muted-foreground">{job.period}</p>
+            </div>
+            <div className="p-6 pt-0">
+                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                    {job.details.map((detail, i) => (
+                        <li key={i}>{detail}</li>
+                    ))}
+                </ul>
             </div>
             {index < portfolioData.experience.length - 1 && <Separator />}
           </div>

@@ -2,6 +2,8 @@ import { portfolioData } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
 import AnimatedSection from "./AnimatedSection";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 const Projects = () => {
   return (
@@ -21,6 +23,17 @@ const Projects = () => {
                   <li key={i}>{detail}</li>
                 ))}
               </ul>
+              <div className="mt-4 flex gap-6">
+                <Link href={project.links.live} target="_blank" className="inline-flex items-center gap-2 font-medium text-primary transition-colors hover:text-primary/80">
+                  Live Application <ArrowUpRight className="h-4 w-4" />
+                </Link>
+                <Link href={project.links.github} target="_blank" className="inline-flex items-center gap-2 font-medium text-primary transition-colors hover:text-primary/80">
+                  Github <ArrowUpRight className="h-4 w-4" />
+                </Link>
+                <Link href={project.links.demo} target="_blank" className="inline-flex items-center gap-2 font-medium text-primary transition-colors hover:text-primary/80">
+                  Demo <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
              <div className={cn("bg-muted p-8 flex items-center justify-center rounded-lg", index % 2 === 1 && "md:order-1")}>
                 <div className="w-full h-64 rounded-lg bg-background flex items-center justify-center text-muted-foreground">

@@ -57,19 +57,16 @@ const Hero = () => {
         </div>
         <div className="relative flex items-center justify-center">
             {profileImage && (
-              <div className="relative h-[360px] w-[290px] sm:h-[400px] sm:w-[320px] md:h-[450px] md:w-[360px]">
+              <div className="relative h-[360px] w-[290px] sm:h-[400px] sm:w-[320px] md:h-[450px] md:w-[360px] group transition-transform duration-300 hover:scale-105">
                 <Image
                     src={profileImage.imageUrl}
                     alt={profileImage.description}
                     fill
                     priority
-                    className="rounded-lg"
+                    className="rounded-lg transition-transform duration-300 group-hover:-rotate-2"
                     data-ai-hint={profileImage.imageHint}
                 />
-                <div className="absolute -bottom-6 -left-6 -z-10 h-full w-full rounded-lg border-2 border-dashed border-foreground/30"></div>
-                <div className="absolute -right-6 -top-6 hidden h-20 w-20 items-center justify-center rounded-full bg-primary text-primary-foreground md:flex">
-                    <p className="animate-spin-slow text-xs uppercase">[ Full Stack Developer ]</p>
-                </div>
+                <div className="absolute -bottom-6 -left-6 -z-10 h-full w-full rounded-lg border-2 border-dashed border-foreground/30 transition-transform duration-300 group-hover:rotate-2"></div>
                  <div className="absolute -bottom-5 right-0 z-10 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground">
                     <p className="text-base font-bold">NS</p>
                 </div>

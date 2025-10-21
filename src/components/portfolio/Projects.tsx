@@ -42,7 +42,7 @@ const Projects = () => {
                 )}
               </div>
             </div>
-             <div className={cn("bg-muted flex items-center justify-center rounded-lg self-stretch", index % 2 === 1 && "md:order-1")}>
+             <div className={cn("flex items-center justify-center self-stretch", index % 2 === 1 && "md:order-1")}>
                 {project.title === "Real Time Chat Application" ? (
                   <div className="relative h-full w-full group rounded-lg overflow-hidden">
                     <Image 

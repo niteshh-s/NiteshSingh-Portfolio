@@ -42,18 +42,27 @@ const Projects = () => {
                 )}
               </div>
             </div>
-             <div className={cn("bg-muted p-6 flex items-center justify-center rounded-lg min-h-[300px]", index % 2 === 1 && "md:order-1")}>
+             <div className={cn("bg-muted aspect-square flex items-center justify-center rounded-lg p-4", index % 2 === 1 && "md:order-1")}>
                 {project.title === "Real Time Chat Application" ? (
-                  <div className="relative h-[300px] w-full group rounded-lg overflow-hidden">
+                  <div className="relative h-full w-full group rounded-lg overflow-hidden">
                     <Image 
                       src="/Web Chat Application.png" 
                       alt="Web Chat Application" 
                       fill 
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="object-contain transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                ) : project.title === "Ecommerce Website" ? (
+                  <div className="relative h-full w-full group rounded-lg overflow-hidden">
+                    <Image 
+                      src="/Ecommerce Website.png" 
+                      alt="Ecommerce Website" 
+                      fill 
+                      className="object-contain transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                 ) : (
-                    <div className="w-full h-60 rounded-md bg-background flex items-center justify-center text-muted-foreground">
+                    <div className="w-full h-full rounded-md bg-background flex items-center justify-center text-muted-foreground">
                         Project Visual
                     </div>
                 )}

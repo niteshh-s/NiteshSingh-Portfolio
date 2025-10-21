@@ -67,10 +67,10 @@ const Hero = () => {
                     data-ai-hint={profileImage.imageHint}
                 />
                 <div className="absolute -bottom-6 -left-6 -z-10 h-full w-full rounded-lg border-2 border-dashed border-foreground/30"></div>
-                <div className="absolute -right-6 -top-6 hidden h-20 w-20 items-center justify-center rounded-full bg-background md:flex">
+                <div className="absolute -right-6 -top-6 hidden h-20 w-20 items-center justify-center rounded-full bg-primary text-primary-foreground md:flex">
                     <p className="animate-spin-slow text-xs uppercase">[ Full Stack Developer ]</p>
                 </div>
-                 <div className="absolute -bottom-5 right-0 -z-10 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                 <div className="absolute -bottom-5 right-0 z-10 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground">
                     <p className="text-base font-bold">NS</p>
                 </div>
               </div>

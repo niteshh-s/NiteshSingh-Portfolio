@@ -22,11 +22,19 @@ const Hero = () => {
           <ul className="mt-5 space-y-2">
               <li className="flex items-center gap-3 text-sm">
                 <Check className="h-4 w-4 text-primary"/>
-                <span>Product must be authentic</span>
+                <span>Scalable architecture and clean code.</span>
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <Check className="h-4 w-4 text-primary"/>
-                <span>Solve pain points elegantly</span>
+                <span>Seamless user experience across devices.</span>
+              </li>
+              <li className="flex items-center gap-3 text-sm">
+                <Check className="h-4 w-4 text-primary"/>
+                <span>Agile collaboration and rapid iteration.</span>
+              </li>
+              <li className="flex items-center gap-3 text-sm">
+                <Check className="h-4 w-4 text-primary"/>
+                <span>Continuous integration and deployment workflows.</span>
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <Check className="h-4 w-4 text-primary"/>

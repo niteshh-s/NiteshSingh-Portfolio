@@ -71,9 +71,9 @@ export const portfolioData = {
         "Enabled real-time messaging, typing indicators, and group chat features through WebSocket communication (SignalR).",
       ],
       links: {
-        live: "#",
-        github: "https://github.com",
-        demo: "#",
+        live: "https://niteshchatappclient-cbbdach6cnegf7aq.southindia-01.azurewebsites.net",
+        github: "https://github.com/niteshh-s?tab=repositories",
+        demo: "https://drive.google.com/file/d/13Hld1B7oAR-BvOzkqiPArKbi8wK3DoNF/view?usp=sharing",
       },
     },
     {
@@ -85,7 +85,7 @@ export const portfolioData = {
         "Added a tree-view feature to display the directory structure directly in the terminal.",
       ],
       links: {
-        github: "https://github.com",
+        github: "https://github.com/niteshh-s?tab=repositories",
       },
     },
   ],

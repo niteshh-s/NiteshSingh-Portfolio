@@ -2,7 +2,7 @@ import Image from "next/image";
 import { portfolioData } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Button } from "@/components/ui/button";
-import { Check, Download, Send } from "lucide-react";
+import { Check, Download, Phone } from "lucide-react";
 
 const Hero = () => {
   const profileImage = PlaceHolderImages.find(p => p.id === 'profile-picture');
@@ -42,9 +42,9 @@ const Hero = () => {
               </li>
           </ul>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={`mailto:${portfolioData.contact.email}`}>
+            <a href="#contact">
               <Button size="default" className="gap-2">
-                Let's Talk <Send className="h-4 w-4" />
+                <Phone className="h-4 w-4" /> Contact me
               </Button>
             </a>
             <a href="/resume.pdf" download>

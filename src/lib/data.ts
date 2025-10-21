@@ -77,12 +77,14 @@ export const portfolioData = {
       },
     },
     {
-      title: "File System Organizer",
-      techStack: ["JavaScript", "Node.js"],
-      description: "A CLI application to organize files and view directory structures.",
+      title: "Ecommerce Website",
+      techStack: ["javascript", "jquery", "bootstrap"],
+      description: "Fully functional E-commerce website front-end and back-end built from scratch",
       details: [
-        "Created a CLI-application to organize files in a directory based on file types.",
-        "Added a tree-view feature to display the directory structure directly in the terminal.",
+        "javascript, jquery, bootstrap and css for the front-end",
+        "Intelligent searching mechanism for products.",
+        "Awesome Cart package that uses session.",
+        "Categories, tags and price filtering for easier search for products."
       ],
       links: {
         github: "https://github.com/niteshh-s?tab=repositories",

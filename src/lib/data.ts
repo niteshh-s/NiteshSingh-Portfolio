@@ -10,17 +10,17 @@ export const portfolioData = {
     links: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/nitesh-kumar-singh-6720",
+        url: "https://www.linkedin.com/in/nitesh-singh-a241981ba/",
         icon: Linkedin,
       },
       {
         name: "Github",
-        url: "https://github.com/niteshk6720",
+        url: "https://github.com/niteshh-s?tab=repositories",
         icon: Github,
       },
       {
         name: "Leetcode",
-        url: "https://leetcode.com/u/niteshk6720/",
+        url: "https://leetcode.com/u/Nitesh_Singh/",
         icon: Code,
       },
     ],

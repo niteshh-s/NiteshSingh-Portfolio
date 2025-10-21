@@ -16,9 +16,9 @@ const Footer = () => {
               {link.name === 'Leetcode' ? <LeetCodeIcon /> : <link.icon className="h-6 w-6"/>}
             </a>
           ))}
-           <a href={`mailto:${portfolioData.contact.email}`} className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
+           <span className="text-sm font-medium text-muted-foreground">
             {portfolioData.contact.email}
-          </a>
+          </span>
         </div>
       </div>
     </footer>

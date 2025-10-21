@@ -14,7 +14,6 @@ const Skills = () => {
   const othersSkills = skillCategories.find(([cat]) => cat === 'Others');
   const devopsSkills = skillCategories.find(([cat]) => cat === 'DevOps');
   const databaseSkills = skillCategories.find(([cat]) => cat === 'Database');
-  const cloudSkills = skillCategories.find(([cat]) => cat === 'Cloud Technologies');
 
   const SkillCard = ({ category, skills, className }: { category: string, skills: string[], className?: string }) => (
     <Card
@@ -57,8 +56,7 @@ const Skills = () => {
         {frontendSkills && <SkillCard category={frontendSkills[0]} skills={frontendSkills[1]} className="col-span-3"/>}
         {databaseSkills && <SkillCard category={databaseSkills[0]} skills={databaseSkills[1]} className="col-span-3"/>}
 
-        {othersSkills && <SkillCard category={othersSkills[0]} skills={othersSkills[1]} className="col-span-5"/>}
-        {cloudSkills && <SkillCard category={cloudSkills[0]} skills={cloudSkills[1]} className="col-span-1"/>}
+        {othersSkills && <SkillCard category={othersSkills[0]} skills={othersSkills[1]} className="col-span-6"/>}
       </div>
     </AnimatedSection>
   );

@@ -30,8 +30,7 @@ export const portfolioData = {
     'Backend': [".Net", "C#", "Microservices", "REST APIs", "SignalR", "WebSocket", "Concurrency", "Multithreading"],
     'DevOps': ["Azure DevOps", "CI/CD"],
     'Database': ["SQL", "PostgreSQL", "NoSQL", "MongoDB"],
-    'Cloud Technologies': ["Azure"],
-    'Others': ["SDLC", "Agile", "OOPS", "SOLID Principles", "Distributed Systems", "Data Structures", "Algorithms", "Design Patterns", "Event-Driven Architecture", "AI Agents"],
+    'Others': ["SDLC", "Agile", "OOPS", "SOLID Principles", "Distributed Systems", "Data Structures", "Algorithms", "Design Patterns", "Event-Driven Architecture", "AI Agents", "Azure"],
   },
   experience: [
     {

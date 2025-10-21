@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import { portfolioData } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Button } from "@/components/ui/button";
@@ -58,12 +58,10 @@ const Hero = () => {
         <div className="relative flex items-center justify-center">
             {profileImage && (
               <div className="relative h-[360px] w-[290px] sm:h-[400px] sm:w-[320px] md:h-[450px] md:w-[360px] group transition-transform duration-300 hover:scale-105 drop-shadow-2xl">
-                <Image
+                <img
                     src={profileImage.imageUrl}
                     alt={profileImage.description}
-                    fill
-                    priority
-                    className="rounded-lg transition-transform duration-300 group-hover:-rotate-2"
+                    className="absolute inset-0 h-full w-full rounded-lg object-cover transition-transform duration-300 group-hover:-rotate-2"
                     data-ai-hint={profileImage.imageHint}
                 />
                 <div className="absolute -bottom-6 -left-6 -z-10 h-full w-full rounded-lg border-2 border-dashed border-foreground/30 transition-transform duration-300 group-hover:rotate-2"></div>

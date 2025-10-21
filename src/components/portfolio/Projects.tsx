@@ -1,10 +1,10 @@
+
 import { portfolioData } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
 import AnimatedSection from "./AnimatedSection";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import Image from "next/image";
 
 const Projects = () => {
   return (
@@ -45,20 +45,18 @@ const Projects = () => {
              <div className={cn("flex items-center justify-center self-stretch", index % 2 === 1 && "md:order-1")}>
                 {project.title === "Real Time Chat Application" ? (
                   <div className="relative h-full w-full group rounded-lg overflow-hidden">
-                    <Image 
+                    <img 
                       src="/Web Chat Application.png" 
                       alt="Web Chat Application" 
-                      fill 
-                      className="object-contain transition-transform duration-300 group-hover:scale-105"
+                      className="absolute inset-0 h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                 ) : project.title === "Ecommerce Website" ? (
                   <div className="relative h-full w-full group rounded-lg overflow-hidden">
-                    <Image 
+                    <img
                       src="/ecommerce collage.png" 
                       alt="Ecommerce Website" 
-                      fill 
-                      className="object-contain transition-transform duration-300 group-hover:scale-105"
+                      className="absolute inset-0 h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                 ) : (

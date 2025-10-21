@@ -55,7 +55,7 @@ const Projects = () => {
                 ) : project.title === "Ecommerce Website" ? (
                   <div className="relative h-full w-full group rounded-lg overflow-hidden">
                     <Image 
-                      src="/Ecommerce Website.png" 
+                      src="/ecommerce collage.png" 
                       alt="Ecommerce Website" 
                       fill 
                       className="object-contain transition-transform duration-300 group-hover:scale-105"

@@ -44,7 +44,7 @@ const Hero = () => {
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#contact">
               <Button size="default" className="gap-2">
-                <Phone className="h-4 w-4" /> Contact me
+                Contact me <Phone className="h-4 w-4" />
               </Button>
             </a>
             <a href="/resume.pdf" download>

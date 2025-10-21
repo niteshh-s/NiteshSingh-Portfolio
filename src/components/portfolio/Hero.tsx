@@ -48,7 +48,7 @@ const Hero = () => {
                 Contact me <Phone className="h-4 w-4" />
               </Button>
             </a>
-            <a href="/resume.pdf" download>
+            <a href="/NiteshSingh2025Resume.pdf" download>
               <Button size="default" variant="outline" className="gap-2">
                 Download CV <Download className="h-4 w-4" />
               </Button>

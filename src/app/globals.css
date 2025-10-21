@@ -91,11 +91,14 @@ body {
   .noisy-bg::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
-    height: 100%;
-    background: radial-gradient(circle at bottom, hsla(30, 50%, 40%, 0.2), hsla(270, 50%, 50%, 0.2), hsla(180, 70%, 50%, 0.3), transparent 70%);
+    bottom: 0;
+    background: radial-gradient(ellipse 80% 50% at 50% 0%, hsla(30, 50%, 40%, 0.3), transparent),
+                radial-gradient(ellipse 80% 50% at 50% 100%, hsla(270, 50%, 50%, 0.3), transparent),
+                radial-gradient(ellipse 80% 70% at 0% 50%, hsla(180, 70%, 50%, 0.3), transparent),
+                radial-gradient(ellipse 80% 70% at 100% 50%, hsla(180, 70%, 50%, 0.2), transparent);
     filter: blur(100px);
     z-index: 0;
     pointer-events: none;

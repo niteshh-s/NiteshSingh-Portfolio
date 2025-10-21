@@ -21,13 +21,13 @@ const AnimatedSection = ({ id, className, children }: AnimatedSectionProps) => {
       id={id}
       ref={ref}
       className={cn(
-        "py-16 md:py-24 lg:py-28 transition-opacity duration-1000 ease-in-out",
+        "py-16 md:py-24 lg:py-28 transition-opacity duration-500 ease-in-out",
         inView ? 'opacity-100' : 'opacity-0',
         className
       )}
     >
       <div className={cn(
-          "transition-transform duration-1000 ease-in-out",
+          "transition-transform duration-500 ease-in-out",
           inView ? 'translate-y-0' : 'translate-y-10',
       )}>
         {children}

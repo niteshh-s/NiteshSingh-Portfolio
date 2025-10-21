@@ -20,7 +20,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={cn('sticky top-0 z-50 w-full transition-all duration-300 animate-fade-in', isScrolled ? 'border-b border-border/20 backdrop-blur-sm' : '')}>
+    <header className={cn('sticky top-0 z-50 w-full transition-all duration-300 animate-fade-in [animation-duration:1s]', isScrolled ? 'border-b border-border/20 backdrop-blur-sm' : '')}>
       <div className="flex h-24 items-center justify-between">
         <Link href="/" className="text-2xl font-bold tracking-tight">
           it's me

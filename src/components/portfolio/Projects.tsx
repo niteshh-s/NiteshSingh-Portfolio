@@ -4,6 +4,7 @@ import AnimatedSection from "./AnimatedSection";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 const Projects = () => {
   return (
@@ -41,10 +42,26 @@ const Projects = () => {
                 )}
               </div>
             </div>
-             <div className={cn("bg-muted p-6 flex items-center justify-center rounded-lg", index % 2 === 1 && "md:order-1")}>
-                <div className="w-full h-60 rounded-md bg-background flex items-center justify-center text-muted-foreground">
-                    Project Visual
-                </div>
+             <div className={cn("bg-muted p-6 flex items-center justify-center rounded-lg min-h-[300px]", index % 2 === 1 && "md:order-1")}>
+                {project.title === "Real Time Chat Application" ? (
+                  <div className="relative h-full w-full group">
+                     <div className="grid grid-cols-2 grid-rows-2 gap-4 h-full w-full">
+                        <div className="relative row-span-2 rounded-lg overflow-hidden transform transition-transform duration-300 group-hover:scale-105 group-hover:z-10">
+                            <Image src="/chat1.png" alt="Chat app screenshot 1" fill className="object-cover" />
+                        </div>
+                        <div className="relative rounded-lg overflow-hidden transform transition-transform duration-300 group-hover:scale-105 group-hover:z-10">
+                            <Image src="/chat2.png" alt="Chat app screenshot 2" fill className="object-cover" />
+                        </div>
+                        <div className="relative rounded-lg overflow-hidden transform transition-transform duration-300 group-hover:scale-105 group-hover:z-10">
+                            <Image src="/chat3.png" alt="Chat app screenshot 3" fill className="object-cover" />
+                        </div>
+                    </div>
+                  </div>
+                ) : (
+                    <div className="w-full h-60 rounded-md bg-background flex items-center justify-center text-muted-foreground">
+                        Project Visual
+                    </div>
+                )}
             </div>
           </div>
         ))}

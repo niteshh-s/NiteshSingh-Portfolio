@@ -34,14 +34,14 @@ body {
   }
 
   .dark {
-    --background: 0 0% 3.9%;
+    --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
+    --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
+    --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
+    --primary-foreground: 240 10% 3.9%;
     --secondary: 0 0% 14.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 14.9%;
@@ -50,7 +50,7 @@ body {
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
+    --border: 0 0% 25%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
   }
@@ -72,7 +72,37 @@ body {
   .fade-in-up {
     animation: fadeInUp 0.5s ease-in-out forwards;
   }
+  .noisy-bg {
+    position: relative;
+    background-color: hsl(var(--background));
+  }
+  .noisy-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)"/></svg>');
+    background-repeat: repeat;
+    opacity: 0.02;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .noisy-bg::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to right, hsla(30, 50%, 40%, 0.2), hsla(270, 50%, 50%, 0.2), hsla(180, 70%, 50%, 0.3));
+    filter: blur(100px);
+    z-index: 0;
+    pointer-events: none;
+  }
 }
+
 
 @keyframes fadeIn {
   from {

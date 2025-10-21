@@ -57,7 +57,7 @@ const Hero = () => {
         </div>
         <div className="relative flex items-center justify-center">
             {profileImage && (
-              <div className="relative h-[360px] w-[290px] sm:h-[400px] sm:w-[320px] md:h-[450px] md:w-[360px] group transition-transform duration-300 hover:scale-105">
+              <div className="relative h-[360px] w-[290px] sm:h-[400px] sm:w-[320px] md:h-[450px] md:w-[360px] group transition-transform duration-300 hover:scale-105 drop-shadow-2xl">
                 <Image
                     src={profileImage.imageUrl}
                     alt={profileImage.description}
